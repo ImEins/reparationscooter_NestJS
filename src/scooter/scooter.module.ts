@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
+
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { ScooterController } from './scooter.controller';
 import { ScooterEntity } from './scooter.entity';
 import { ScooterService } from './scooter.service';

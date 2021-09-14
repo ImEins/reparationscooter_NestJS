@@ -1,4 +1,3 @@
-import { RepairEntity } from 'src/repair/repair.entity';
 import {
   Column,
   Entity,
@@ -6,6 +5,8 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+
+import { RepairEntity } from 'src/repair/repair.entity';
 
 @Entity()
 export class ScooterEntity {

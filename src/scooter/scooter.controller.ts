@@ -7,6 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+
 import { ScooterService } from './scooter.service';
 import { ScooterDTO } from './scooter.dto';
 

@@ -1,27 +1,38 @@
-import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
+
+import { RepairDTO } from './repair.dto';
+
 import { RepairService } from './repair.service';
 
 @Controller('repair')
 export class RepairController {
-  constructor(private readonly repairService: RepairService) {}
+  constructor(private readonly service: RepairService) {}
 
   @Get()
   getRepairs() {
-    return this.repairService.getRepairs();
+    return this.service.getRepairs();
   }
 
   @Post()
-  createRepair() {
-    return this.repairService.createRepair();
+  createRepair(@Body() repair: RepairDTO) {
+    return this.service.createRepair(repair);
   }
 
   @Put('/:id')
-  updateRepair() {
-    return this.repairService.updateRepair();
+  updateRepair(@Body() repair: RepairDTO, @Param('id') id: number) {
+    return this.service.updateRepair(id, repair);
   }
 
   @Delete('/:id')
-  deleteRepair() {
-    return this.repairService.deleteRepair();
+  deleteRepair(@Param('id') id: number) {
+    return this.service.deleteRepair(id);
   }
 }

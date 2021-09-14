@@ -13,23 +13,23 @@ export class ScooterService {
     private readonly scooterRepo: Repository<ScooterEntity>,
   ) {}
 
-  getScooters() {
-    return this.scooterRepo.find();
+  async getScooters() {
+    return await this.scooterRepo.find();
   }
 
   async getScooterWithRepairs(id: number) {
-    // const scooter = await this.scooterRepo.findOneOrFail(id);
-    // if (scooter) {
-    //   const scooter_repairs = await this.scooterRepo.
-    // }
-    return 'to come';
+    const scooter = await this.scooterRepo.findOne(id);
+    await scooter.repairs;
+    if (scooter) {
+      return scooter;
+    }
   }
 
   async createScooter(scooter: ScooterDTO) {
     try {
       await this.scooterRepo.save(scooter);
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 
@@ -37,7 +37,7 @@ export class ScooterService {
     try {
       await this.scooterRepo.update(id, scooter);
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 
@@ -45,7 +45,7 @@ export class ScooterService {
     try {
       await this.scooterRepo.delete(id);
     } catch (err) {
-      console.log(err);
+      return err;
     }
   }
 }
