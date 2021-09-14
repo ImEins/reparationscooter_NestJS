@@ -1,5 +1,14 @@
-import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { ScooterService } from './scooter.service';
+import { ScooterDTO } from './scooter.dto';
 
 @Controller('scooter')
 export class ScooterController {
@@ -11,22 +20,22 @@ export class ScooterController {
   }
 
   @Get('/:id')
-  getScooterWithRepair() {
-    return this.service.getScooterWithRepairs();
+  getScooterWithRepair(@Param() id: number) {
+    return this.service.getScooterWithRepairs(id);
   }
 
   @Post()
-  createScooter() {
-    return this.service.createScooter();
+  createScooter(@Body() scooter: ScooterDTO) {
+    return this.service.createScooter(scooter);
   }
 
   @Put('/:id')
-  updateScooter() {
-    return this.service.updateScooter();
+  updateScooter(@Body() scooter: ScooterDTO, @Param('id') id: number) {
+    return this.service.updateScooter(id, scooter);
   }
 
   @Delete('/:id')
-  deleteScooter() {
-    return this.service.deleteScooter();
+  deleteScooter(@Param('id') id: number) {
+    return this.service.deleteScooter(id);
   }
 }

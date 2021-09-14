@@ -29,5 +29,5 @@ export class ScooterEntity {
 
   @ManyToMany(() => RepairEntity)
   @JoinTable({ name: 'scooters_repairs' })
-  repairs: RepairEntity[];
+  repairs: Promise<RepairEntity[]>;
 }

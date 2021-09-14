@@ -16,5 +16,5 @@ export class RepairEntity {
   price: number;
 
   @ManyToMany(() => ScooterEntity)
-  scooters: ScooterEntity[];
+  scooters: Promise<ScooterEntity[]>;
 }
