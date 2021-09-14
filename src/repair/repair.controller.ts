@@ -8,8 +8,7 @@ import {
   Put,
 } from '@nestjs/common';
 
-import { RepairDTO } from './repair.dto';
-
+import { RepairDTO } from './dto/repair.dto';
 import { RepairService } from './repair.service';
 
 @Controller('repair')

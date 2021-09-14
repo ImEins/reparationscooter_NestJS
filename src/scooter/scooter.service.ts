@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { ScooterDTO } from './scooter.dto';
+import { ScooterDTO } from './dto/scooter.dto';
 import { ScooterEntity } from './scooter.entity';
 
 @Injectable()

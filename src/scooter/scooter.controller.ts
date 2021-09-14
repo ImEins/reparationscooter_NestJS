@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 
 import { ScooterService } from './scooter.service';
-import { ScooterDTO } from './scooter.dto';
+import { ScooterDTO } from './dto/scooter.dto';
 
 @Controller('scooter')
 export class ScooterController {

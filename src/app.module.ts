@@ -3,10 +3,20 @@ import { Module } from '@nestjs/common';
 import { ScooterModule } from './scooter/scooter.module';
 
 import { RepairModule } from './repair/repair.module';
-// - ORM
+
 import { TypeOrmModule } from '@nestjs/typeorm';
+// - GraphQL
+import { GraphQLModule } from '@nestjs/graphql';
+import { join } from 'path';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), ScooterModule, RepairModule],
+  imports: [
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    }),
+    TypeOrmModule.forRoot(),
+    ScooterModule,
+    RepairModule,
+  ],
 })
 export class AppModule {}

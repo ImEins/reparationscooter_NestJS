@@ -1,0 +1,27 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type RepairEntity {
+  id: Int!
+  abbr: String
+  description: String
+  price: Float
+  scooters: [ScooterEntity!]!
+}
+
+type ScooterEntity {
+  id: Int!
+  name: String
+  power: Float
+  brand: String
+  model: Float
+  mileage: Float
+  repairs: [RepairEntity!]!
+}
+
+type Query {
+  getScooters: [ScooterEntity!]!
+  getScooterWithRepairs(id: Int!): ScooterEntity!
+  repairs: [RepairEntity!]!
+}
