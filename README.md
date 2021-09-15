@@ -5,7 +5,7 @@ This is a small GraphQL API that can store, update or delete two entites (Scoote
 
 ## Notes
 
-After you install the project please be aware that there is no route to create a relation between a scooter and a repair, you'll have to do it manually in the database.
+- After you install the project please be aware that there is no route to create a relation between a scooter and a repair, you'll have to do it manually in the database.
 
 ## Installation
 
