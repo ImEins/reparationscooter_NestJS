@@ -1,7 +1,7 @@
 
 ## Description
 
-This is a small GraphQL API Developped By NestJS that can store, update or delete two entites (Scooter, Repair) which they have a many-to-many relation.
+This is a small GraphQL API developped by NestJS Framework. This API can store, update or delete two entites (Scooter, Repair) which they have a many-to-many relation.
 
 ## Notes
 
